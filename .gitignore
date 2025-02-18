@@ -1,0 +1,41 @@
+# Node modules
+node_modules/
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# ESLint cache
+.eslintcache
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE config files
+.vscode/
+.idea/
+
+# Build output
+dist/
+build/
+out/
+
+# Coverage reports
+coverage/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Log files
+*.log
+
+# Environment files
+.env
+
+# Miscellaneous files
+*.swp
