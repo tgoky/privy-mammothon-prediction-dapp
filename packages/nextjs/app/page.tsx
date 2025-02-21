@@ -89,6 +89,8 @@ const PredictionSite = () => {
     fetchContract();
   }, [user, wallets]); // Re-run when user or wallets change
 
+  
+
   const { addNotification } = useNotification();
 
   const filteredPredictions = predictions.filter(
@@ -323,137 +325,150 @@ const PredictionSite = () => {
         </div>
       </div>
 
-      {/* Predictions Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-8">
-        {filteredPredictions.map(prediction => {
-          const totalVotes = prediction.yesVotes + prediction.noVotes || 1; // Avoid division by zero
-          const yesPercentage = ((prediction.yesVotes / totalVotes) * 100).toFixed(1);
-          const noPercentage = (100 - parseFloat(yesPercentage)).toFixed(1);
+     {/* Predictions Grid */}
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-8">
+  {filteredPredictions.map(prediction => {
+    const totalVotes = prediction.yesVotes + prediction.noVotes || 1; // Avoid division by zero
+    const yesPercentage = ((prediction.yesVotes / totalVotes) * 100).toFixed(1);
+    const noPercentage = (100 - parseFloat(yesPercentage)).toFixed(1);
 
-          const isActive = selectedPrediction?.id === prediction.id;
+    const isActive = selectedPrediction?.id === prediction.id;
 
-          return (
-            <div
-              key={prediction.id}
-              className="bg-gray-800 rounded-lg p-6 shadow-lg text-center relative hover:border-blue-500 hover:border-2 transition-all duration-300"
-            >
-              {/* Live Indicator */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: "8px",
-                  left: "8px",
-                  width: "10px",
-                  height: "10px",
-                  borderRadius: "50%",
-                  backgroundColor: "#10B981",
-                  boxShadow: "0 0 10px #10B981",
-                  animation: "blink 1s infinite",
-                }}
-              ></div>
-              <h3 className="font-bold text-lg">{prediction.title}</h3>
-              <p className="text-sm text-gray-400 mt-2">Category: {prediction.category}</p>
+    // Ensure the deadline comparison is done with getTime to compare in milliseconds
+    const isVotingClosed = new Date(prediction.deadline).getTime() <= new Date().getTime();
 
-              {prediction.status === "in_motion" ? (
-                <>
-                  <p className="mt-4 text-red-500 font-semibold">Prediction in Motion</p>
+    return (
+      <div
+        key={prediction.id}
+        className="bg-gray-800 rounded-lg p-6 shadow-lg text-center relative hover:border-blue-500 hover:border-2 transition-all duration-300"
+      >
+        {/* Live Indicator */}
+        <div
+          style={{
+            position: "absolute",
+            top: "8px",
+            left: "8px",
+            width: "10px",
+            height: "10px",
+            borderRadius: "50%",
+            backgroundColor: "#10B981",
+            boxShadow: "0 0 10px #10B981",
+            animation: "blink 1s infinite",
+          }}
+        ></div>
+        <h3 className="font-bold text-lg">{prediction.title}</h3>
+        <p className="text-sm text-gray-400 mt-2">Category: {prediction.category}</p>
 
-                  {/* Add Claim Reward Button only when status is in_motion and resolved is true */}
-                  {prediction.resolved && (
-                    <button
-                      onClick={() => handleClaimClick(prediction)}
-                      className="w-full py-2 mt-4 rounded-lg bg-pink-500 hover:bg-orange-600 text-white font-bold"
-                    >
-                      Claim Payout
-                    </button>
-                  )}
-                </>
-              ) : (
-                <>
-                  <div className="flex justify-between items-center mt-4">
-                    <button
-                      className={`${
-                        isActive && selectedPrediction?.voteType === "yes"
-                          ? "bg-green-700"
-                          : "bg-green-500 hover:bg-green-600"
-                      } text-white font-bold py-2 px-4 rounded-lg`}
-                      onClick={() => handleVoteClick(prediction, "yes")}
-                    >
-                      Yes
-                    </button>
-                    <button
-                      className={`${
-                        isActive && selectedPrediction?.voteType === "no" ? "bg-red-700" : "bg-red-500 hover:bg-red-600"
-                      } text-white font-bold py-2 px-4 rounded-lg`}
-                      onClick={() => handleVoteClick(prediction, "no")}
-                    >
-                      No
-                    </button>
-                  </div>
-                  <p className="mt-4 text-sm">
-                    Yes: {yesPercentage}% | No: {noPercentage}%
-                  </p>
-                </>
-              )}
-   <CountdownTimer 
-        deadline={prediction.deadline} 
-        resolved={prediction.resolved} 
-        status={prediction.status} 
-      />
+        {prediction.status === "in_motion" ? (
+          <>
+            <p className="mt-4 text-red-500 font-semibold">Prediction in Motion</p>
 
-              {/* Voting Interface */}
-              {isActive && (
-                <div className="mt-4 bg-gray-700 p-4 rounded-lg">
-                  <textarea
-                    readOnly
-                    value={voteAmount.toFixed(2)}
-                    className="w-full bg-gray-800 text-white rounded-lg px-4 py-2 mb-4 text-right"
-                    style={{
-                      fontSize: "1.5rem",
-                      lineHeight: "1.2",
-                      textAlign: "center",
-                    }}
-                  />
-                  <div className="flex justify-between mb-4">
-                    <button
-                      onClick={() => handleIncrement(1)}
-                      className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg"
-                    >
-                      +1x
-                    </button>
-                    <button
-                      onClick={() => handleIncrement(0.01)}
-                      className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg"
-                    >
-                      +1
-                    </button>
-                  </div>
-                  <input
-                    type="range"
-                    min="0.5"
-                    max="100"
-                    step="0.1"
-                    value={voteAmount}
-                    onChange={handleSliderChange}
-                    className="w-full"
-                  />
-                  <button
-                    onClick={e => handleVoteSubmit(selectedPrediction.id, selectedPrediction.voteType, voteAmount)}
-                    className={`w-full py-2 mt-4 rounded-lg font-bold ${
-                      selectedPrediction.voteType === "yes"
-                        ? "bg-green-500 hover:bg-green-600"
-                        : "bg-red-500 hover:bg-red-600"
-                    }`}
-                  >
-                    Say {selectedPrediction.voteType.toUpperCase()} to win {(voteAmount * 2).toFixed(2)} MON
-                  </button>
-                </div>
-              )}
+            {/* Add Claim Reward Button only when status is in_motion and resolved is true */}
+            {prediction.resolved && (
+              <button
+                onClick={() => handleClaimClick(prediction)}
+                className="w-full py-2 mt-4 rounded-lg bg-pink-500 hover:bg-orange-600 text-white font-bold"
+              >
+                Claim Payout
+              </button>
+            )}
+          </>
+        ) : (
+          <>
+            <div className="flex justify-between items-center mt-4">
+              <button
+                disabled={isVotingClosed} // Disable the Yes button if voting is closed
+                className={`${
+                  isVotingClosed
+                    ? "bg-gray-500 cursor-not-allowed" // Make the button gray when voting is closed
+                    : isActive && selectedPrediction?.voteType === "yes"
+                    ? "bg-green-700"
+                    : "bg-green-500 hover:bg-green-600"
+                } text-white font-bold py-2 px-4 rounded-lg`}
+                onClick={() => handleVoteClick(prediction, "yes")}
+              >
+                Yes
+              </button>
+              <button
+                disabled={isVotingClosed} // Disable the No button if voting is closed
+                className={`${
+                  isVotingClosed
+                    ? "bg-gray-500 cursor-not-allowed" // Make the button gray when voting is closed
+                    : isActive && selectedPrediction?.voteType === "no"
+                    ? "bg-red-700"
+                    : "bg-red-500 hover:bg-red-600"
+                } text-white font-bold py-2 px-4 rounded-lg`}
+                onClick={() => handleVoteClick(prediction, "no")}
+              >
+                No
+              </button>
             </div>
-          );
-        })}
-        <Modal isOpen={modalVisible} message={modalMessage} onClose={() => setModalVisible(false)} />
+
+            <p className="mt-4 text-sm">
+              Yes: {yesPercentage}% | No: {noPercentage}%
+            </p>
+          </>
+        )}
+        <CountdownTimer 
+          deadline={prediction.deadline} 
+          resolved={prediction.resolved} 
+          status={prediction.status} 
+        />
+
+        {/* Voting Interface */}
+        {isActive && (
+          <div className="mt-4 bg-gray-700 p-4 rounded-lg">
+            <textarea
+              readOnly
+              value={voteAmount.toFixed(2)}
+              className="w-full bg-gray-800 text-white rounded-lg px-4 py-2 mb-4 text-right"
+              style={{
+                fontSize: "1.5rem",
+                lineHeight: "1.2",
+                textAlign: "center",
+              }}
+            />
+            <div className="flex justify-between mb-4">
+              <button
+                onClick={() => handleIncrement(1)}
+                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg"
+              >
+                +1x
+              </button>
+              <button
+                onClick={() => handleIncrement(0.01)}
+                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg"
+              >
+                +1
+              </button>
+            </div>
+            <input
+              type="range"
+              min="0.5"
+              max="100"
+              step="0.1"
+              value={voteAmount}
+              onChange={handleSliderChange}
+              className="w-full"
+            />
+            <button
+              onClick={e => handleVoteSubmit(selectedPrediction.id, selectedPrediction.voteType, voteAmount)}
+              className={`w-full py-2 mt-4 rounded-lg font-bold ${
+                selectedPrediction.voteType === "yes"
+                  ? "bg-green-500 hover:bg-green-600"
+                  : "bg-red-500 hover:bg-red-600"
+              }`}
+            >
+              Say {selectedPrediction.voteType.toUpperCase()} to win {(voteAmount * 2).toFixed(2)} MON
+            </button>
+          </div>
+        )}
       </div>
+    );
+  })}
+  <Modal isOpen={modalVisible} message={modalMessage} onClose={() => setModalVisible(false)} />
+</div>
+
     </div>
   );
 };

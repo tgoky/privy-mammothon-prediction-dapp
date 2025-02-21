@@ -5,9 +5,9 @@ export const sportsPredictions = [
     category: "Sports",
     yesVotes: 400,
     noVotes: 300,
-    status: "in_motion",
-    resolved: true,
-    deadline: new Date("2025-03-10T18:00:00Z"),
+    status: "open",
+    resolved: false,
+    deadline: new Date("2025-02-10T11:00:00Z"),
   },
   {
     id: 2,
