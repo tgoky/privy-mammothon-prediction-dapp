@@ -7,6 +7,7 @@ export const cryptoPredictions = [
     noVotes: 150,
     status: "open",
     resolved: false,
+    deadline: new Date("2025-03-10T18:00:00Z"),
   },
   {
     id: 12,
@@ -16,5 +17,6 @@ export const cryptoPredictions = [
     noVotes: 400,
     status: "open",
     resolved: false,
+    deadline: new Date("2025-03-10T18:00:00Z"),
   },
 ];

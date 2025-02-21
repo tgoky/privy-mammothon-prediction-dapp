@@ -7,6 +7,7 @@ export const entertainmentPredictions = [
     noVotes: 250,
     status: "open",
     resolved: false,
+    deadline: new Date("2025-03-10T18:00:00Z"),
   },
   {
     id: 8,
@@ -16,5 +17,6 @@ export const entertainmentPredictions = [
     noVotes: 200,
     status: "open",
     resolved: false,
+    deadline: new Date("2025-03-10T18:00:00Z"),
   },
 ];

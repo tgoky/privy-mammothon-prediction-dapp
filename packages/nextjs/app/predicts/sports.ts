@@ -7,6 +7,7 @@ export const sportsPredictions = [
     noVotes: 300,
     status: "in_motion",
     resolved: true,
+    deadline: new Date("2025-03-10T18:00:00Z"),
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const sportsPredictions = [
     noVotes: 350,
     status: "open",
     resolved: false,
+    deadline: new Date("2025-03-10T18:00:00Z"),
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const sportsPredictions = [
     noVotes: 200,
     status: "in_motion",
     resolved: true,
+    deadline: new Date("2025-03-10T18:00:00Z"),
   },
   {
     id: 4,
@@ -34,5 +37,6 @@ export const sportsPredictions = [
     noVotes: 150,
     status: "open",
     resolved: false,
+    deadline: new Date("2025-03-10T18:00:00Z"),
   },
 ];

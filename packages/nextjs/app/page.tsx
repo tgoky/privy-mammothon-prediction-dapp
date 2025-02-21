@@ -14,6 +14,7 @@ import { usePrivy } from "@privy-io/react-auth";
 import { useWallets } from "@privy-io/react-auth";
 import { ethers } from "ethers";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import CountdownTimer from "~~/components/CountdownTimer";
 
 const categories = ["Sports", "Politics", "News", "Entertainment", "Crypto"];
 // Replace with the actual path to your contract ABI
@@ -394,6 +395,11 @@ const PredictionSite = () => {
                   </p>
                 </>
               )}
+   <CountdownTimer 
+        deadline={prediction.deadline} 
+        resolved={prediction.resolved} 
+        status={prediction.status} 
+      />
 
               {/* Voting Interface */}
               {isActive && (

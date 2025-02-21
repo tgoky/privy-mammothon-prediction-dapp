@@ -7,6 +7,7 @@ export const politicsPredictions = [
     noVotes: 450,
     status: "in_motion",
     resolved: true,
+    deadline: new Date("2025-03-10T18:00:00Z"),
   },
   {
     id: 10,
@@ -16,5 +17,6 @@ export const politicsPredictions = [
     noVotes: 300,
     status: "open",
     resolved: false,
+    deadline: new Date("2025-03-10T18:00:00Z"),
   },
 ];
