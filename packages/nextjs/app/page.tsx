@@ -15,8 +15,12 @@ import { useWallets } from "@privy-io/react-auth";
 import { ethers } from "ethers";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import CountdownTimer from "~~/components/CountdownTimer";
+import { chartPrediction } from "./predicts/tcharts";
+import { tickerPrediction } from "./predicts/tickers";
+import { nartPrediction } from "./predicts/narts";
+import TradingViewChart from "./TradingViewChart";
 
-const categories = ["Sports", "Politics", "News", "Entertainment", "Crypto"];
+const categories = ["Sports", "Crypto", "TradingCharts", "DEFI", "Entertainment", "News", "Politics"];
 // Replace with the actual path to your contract ABI
 
 const contractAddress = "0x930Bc20640818022387FE882423566623787480C"; // Replace with your deployed contract address
@@ -39,6 +43,7 @@ type Prediction = {
   yesVotes: number;
   noVotes: number;
   status: string;
+  tradingPair?: string | null; 
   resolved: boolean; // or resolved: boolean if you prefer boolean logic
 };
 
@@ -48,6 +53,9 @@ const predictions = [
   ...entertainmentPredictions,
   ...politicsPredictions,
   ...cryptoPredictions,
+  ...chartPrediction,
+  ...tickerPrediction,
+  ...nartPrediction,
 ];
 
 const filters = ["Recent", "Trending", "2025"];
@@ -62,7 +70,7 @@ const PredictionSite = () => {
   `}
   </style>;
 
-  const [activeCategory, setActiveCategory] = useState("Sports");
+  const [activeCategory, setActiveCategory] = useState("TradingCharts");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedFilter, setSelectedFilter] = useState(filters[0]);
   const [selectedPrediction, setSelectedPrediction] = useState<(Prediction & { voteType: string }) | null>(null);
@@ -253,7 +261,7 @@ const PredictionSite = () => {
           monad muffled birdy market
         </h1>
         <p className="text-3xl mt-2" style={{ fontFamily: "'Rubik Scribble', sans-serif" }}>
-          be a muffled bird on the monad market!
+          be a muffled bird on the FORMA market!
         </p>
       </div>
 
@@ -287,14 +295,18 @@ const PredictionSite = () => {
       <div className="flex justify-center space-x-6 py-4 bg-gradient-to-r from-yellow-600 to-pink-500">
         {categories.map(category => (
           <button
-            key={category}
-            onClick={() => setActiveCategory(category)}
-            className={`py-2 px-4 rounded-lg font-semibold ${
-              activeCategory === category ? "bg-purple-600 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"
-            }`}
-          >
-            {category}
-          </button>
+          key={category}
+          onClick={() => setActiveCategory(category)}
+          className={`relative py-2 px-5 rounded-lg font-bold uppercase tracking-wider transition-all
+                  ${
+                    activeCategory === category
+                      ? "bg-purple-600 text-white border-4 border-purple-700 shadow-[4px_4px_0px_#4c1d95]"
+                      : "bg-gray-700 text-gray-300 border-4 border-gray-800 shadow-[4px_4px_0px_#1f2937] hover:bg-gray-600 hover:shadow-[2px_2px_0px_#1f2937] hover:translate-x-[2px] hover:translate-y-[2px]"
+                  }
+                  active:shadow-[1px_1px_0px_#1f2937] active:translate-x-[4px] active:translate-y-[4px]`}
+        >
+          {category}
+        </button>
         ))}
       </div>
 
@@ -341,6 +353,7 @@ const PredictionSite = () => {
       <div
         key={prediction.id}
         className="bg-gray-800 rounded-lg p-6 shadow-lg text-center relative hover:border-blue-500 hover:border-2 transition-all duration-300"
+        
       >
         {/* Live Indicator */}
         <div
@@ -358,6 +371,12 @@ const PredictionSite = () => {
         ></div>
         <h3 className="font-bold text-lg">{prediction.title}</h3>
         <p className="text-sm text-gray-400 mt-2">Category: {prediction.category}</p>
+        {prediction.tradingPair && (
+                <div className="mt-4">
+                  <TradingViewChart tradingPair={prediction.tradingPair} />
+                </div>
+              )}
+
 
         {prediction.status === "in_motion" ? (
           <>
@@ -459,7 +478,7 @@ const PredictionSite = () => {
                   : "bg-red-500 hover:bg-red-600"
               }`}
             >
-              Say {selectedPrediction.voteType.toUpperCase()} to win {(voteAmount * 2).toFixed(2)} MON
+              Say {selectedPrediction.voteType.toUpperCase()} to win {(voteAmount * 2).toFixed(2)} TIA
             </button>
           </div>
         )}
