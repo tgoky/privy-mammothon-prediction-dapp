@@ -8,6 +8,7 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+     deadline: new Date("2025-03-10T18:00:00Z"),
   },
   {
     id: 2,
