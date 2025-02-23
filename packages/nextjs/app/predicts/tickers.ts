@@ -5,9 +5,10 @@ export const tickerPrediction = [
       category: "DEFI",
       yesVotes: 1200,
       noVotes: 300,
-      status: "open",
-      resolved: false,
+      status: "in_motion",
+      resolved: true,
       tradingPair: "UNIUSDT",
+      deadline: new Date("2025-03-25T18:00:00Z"),
     },
     {
       id: 30,
@@ -18,6 +19,7 @@ export const tickerPrediction = [
       status: "open",
       resolved: false,
       tradingPair: "ETHUSDT",
+      deadline: new Date("2025-03-25T18:00:00Z"),
     },
     {
       id: 31,
@@ -28,6 +30,7 @@ export const tickerPrediction = [
       status: "open",
       resolved: false,
       tradingPair: "BERAUSDT",
+      deadline: new Date("2025-03-30T18:00:00Z"),
     },
     {
       id: 32,
@@ -38,6 +41,7 @@ export const tickerPrediction = [
       status: "open",
       resolved: false,
       tradingPair: "MOVEUSDT",
+      deadline: new Date("2025-03-25T18:00:00Z"),
     },
   ];
   

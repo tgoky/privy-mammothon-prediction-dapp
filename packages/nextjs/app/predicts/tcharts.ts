@@ -8,6 +8,7 @@ export const chartPrediction = [
       status: "open",
       resolved: false,
       tradingPair: "BTCUSDT",
+      deadline: new Date("2025-03-23T18:00:00Z"),
     },
     {
       id: 20,
@@ -18,6 +19,7 @@ export const chartPrediction = [
       status: "open",
       resolved: false,
       tradingPair: "SOLUSDT",
+      deadline: new Date("2025-03-31T18:00:00Z"),
     },
   ];
   

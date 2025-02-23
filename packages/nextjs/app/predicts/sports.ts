@@ -8,7 +8,7 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
-     deadline: new Date("2025-03-10T18:00:00Z"),
+     deadline: new Date("2025-05-25T18:00:00Z"),
   },
   {
     id: 2,
@@ -19,6 +19,7 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-05-25T18:00:00Z"),
   },
   {
     id: 3,
@@ -27,8 +28,9 @@ export const sportsPredictions = [
     yesVotes: 500,
     noVotes: 200,
     status: "open",
-    resolved: true,
+    resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-05-25T18:00:00Z"),
   },
   {
     id: 4,
@@ -39,6 +41,7 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-05-25T18:00:00Z"),
   },
   {
     id: 5,
@@ -49,6 +52,7 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-02-28T18:00:00Z"),
   },
   {
     id: 6,
@@ -59,6 +63,7 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-02-28T18:00:00Z"),
   },
   {
     id: 7,
@@ -69,6 +74,7 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-02-28T18:00:00Z"),
   },
   {
     id: 8,
@@ -79,6 +85,7 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-05-25T18:00:00Z"),
   },
   {
     id: 9,
@@ -89,6 +96,7 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-05-25T18:00:00Z"),
   },
   {
     id: 10,
@@ -99,6 +107,7 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-05-23T18:00:00Z"),
   },
   {
     id: 11,
@@ -109,5 +118,6 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-03-31T18:00:00Z"),
   },
 ];

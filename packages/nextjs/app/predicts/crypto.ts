@@ -8,6 +8,7 @@ export const cryptoPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-03-20T18:00:00Z"),
   },
   {
     id: 22,
@@ -18,6 +19,7 @@ export const cryptoPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-03-10T18:00:00Z"),
   },
   {
     id: 23,
@@ -28,6 +30,7 @@ export const cryptoPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-03-23T18:00:00Z"),
   },
   {
     id: 24,
@@ -38,6 +41,7 @@ export const cryptoPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-12-20T18:00:00Z"),
   },
   {
     id: 25,
@@ -48,6 +52,8 @@ export const cryptoPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-12-11T18:00:00Z"),
+
   },
   {
     id: 26,
@@ -59,6 +65,7 @@ export const cryptoPredictions = [
     resolved: false,
     tradingPair: null,
         // deadline: new Date("2025-03-10T18:00:00Z"),
+        deadline: new Date("2025-12-20T18:00:00Z"),
   },
   {
     id: 27,
@@ -70,6 +77,7 @@ export const cryptoPredictions = [
     resolved: false,
     tradingPair: null,
         // deadline: new Date("2025-03-10T18:00:00Z"),
+        deadline: new Date("2025-12-20T18:00:00Z"),
   },
   {
     id: 28,
@@ -81,5 +89,6 @@ export const cryptoPredictions = [
     resolved: false,
     tradingPair: null,
         // deadline: new Date("2025-03-10T18:00:00Z"),
+        deadline: new Date("2025-12-20T18:00:00Z"),
   },
 ];

@@ -9,6 +9,7 @@ export const nartPrediction = [
       resolved: false,
       tradingPair: null,
       // OpenSea slug for BAYC
+      deadline: new Date("2025-03-25T18:00:00Z"),
     },
     {
       id: 34,
@@ -20,6 +21,7 @@ export const nartPrediction = [
       resolved: false,
       tradingPair: null,
       // OpenSea slug for CryptoPunks
+      deadline: new Date("2025-12-31T18:00:00Z"),
     },
     {
       id: 35,
@@ -31,6 +33,7 @@ export const nartPrediction = [
       resolved: false,
       tradingPair: null,
       // OpenSea slug for CryptoPunks
+      deadline: new Date("2025-03-30T18:00:00Z"),
     },
     {
       id: 36,
@@ -42,6 +45,7 @@ export const nartPrediction = [
       resolved: false,
       tradingPair: null,
       // OpenSea slug for CryptoPunks
+      deadline: new Date("2025-03-07T18:00:00Z"),
     },
   ];
   

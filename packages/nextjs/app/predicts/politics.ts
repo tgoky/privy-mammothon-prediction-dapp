@@ -8,6 +8,7 @@ export const politicsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-03-25T18:00:00Z"),
   },
   {
     id: 13,
@@ -18,6 +19,7 @@ export const politicsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-12-25T18:00:00Z"),
   },
   {
     id: 14,
@@ -28,5 +30,6 @@ export const politicsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    deadline: new Date("2025-12-25T18:00:00Z"),
   },
 ];
