@@ -31,8 +31,8 @@ export const reposPrediction = [
       category: "Repositories",
       yesVotes: 1200,
       noVotes: 300,
-      status: "in_motion",
-      resolved: true,
+      status: "open",
+      resolved: false,
       tradingPair: null,
       targetStars: 300, // Add targetStars
       githubrepo: 'initia-labs/initia-registry',
