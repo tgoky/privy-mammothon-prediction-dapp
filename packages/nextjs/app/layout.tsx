@@ -9,8 +9,8 @@ import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 // Import the Privy wrapper
 
 export const metadata = getMetadata({
-  title: "Muffled Bird",
-  description: "Be a Muffled Bird on the Monad Market",
+  title: "Muffled Mamo",
+  description: "Be a Muffled Mamo on the Forma Market",
 });
 
 const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {

@@ -7,7 +7,9 @@ export const sportsPredictions = [
     noVotes: 300,
     status: "open",
     resolved: false,
+    soccerstats: null, 
     tradingPair: null,
+    targetStars: null, // Add targetStars
      deadline: new Date("2025-05-25T18:00:00Z"),
   },
   {
@@ -18,7 +20,9 @@ export const sportsPredictions = [
     noVotes: 350,
     status: "open",
     resolved: false,
+    soccerstats: 'bl1', 
     tradingPair: null,
+    targetStars: null, // Add targetStars
     deadline: new Date("2025-05-25T18:00:00Z"),
   },
   {
@@ -30,6 +34,7 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    soccerstats: null, 
     deadline: new Date("2025-05-25T18:00:00Z"),
   },
   {
@@ -40,7 +45,9 @@ export const sportsPredictions = [
     noVotes: 150,
     status: "open",
     resolved: false,
+    soccerstats: null, 
     tradingPair: null,
+    targetStars: null, // Add targetStars
     deadline: new Date("2025-05-25T18:00:00Z"),
   },
   {
@@ -52,6 +59,8 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    soccerstats: null, 
+    targetStars: null, // Add targetStars
     deadline: new Date("2025-02-28T18:00:00Z"),
   },
   {
@@ -63,6 +72,8 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    soccerstats: null, 
+    targetStars: null, // Add targetStars
     deadline: new Date("2025-02-28T18:00:00Z"),
   },
   {
@@ -73,7 +84,9 @@ export const sportsPredictions = [
     noVotes: 150,
     status: "open",
     resolved: false,
+    soccerstats: "CL", 
     tradingPair: null,
+    targetStars: null, // Add targetStars
     deadline: new Date("2025-02-28T18:00:00Z"),
   },
   {
@@ -84,7 +97,9 @@ export const sportsPredictions = [
     noVotes: 150,
     status: "open",
     resolved: false,
+    soccerstats: "CL", 
     tradingPair: null,
+    targetStars: null, // Add targetStars
     deadline: new Date("2025-05-25T18:00:00Z"),
   },
   {
@@ -95,7 +110,9 @@ export const sportsPredictions = [
     noVotes: 150,
     status: "open",
     resolved: false,
+    soccerstats: "CL", 
     tradingPair: null,
+    targetStars: null, // Add targetStars
     deadline: new Date("2025-05-25T18:00:00Z"),
   },
   {
@@ -107,6 +124,8 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    targetStars: null, // Add targetStars
+    githubrepo: null,
     deadline: new Date("2025-05-23T18:00:00Z"),
   },
   {
@@ -118,6 +137,8 @@ export const sportsPredictions = [
     status: "open",
     resolved: false,
     tradingPair: null,
+    githubrepo: null,
+    targetStars: null, // Add targetStars
     deadline: new Date("2025-03-31T18:00:00Z"),
   },
 ];

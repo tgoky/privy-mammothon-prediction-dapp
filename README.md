@@ -1,6 +1,6 @@
 The First Prediction Market on the Monad Ecosystem
 
-Be a muffled bird on the monad market !
+Be a muffled mamo on the forma market !
 
 VISIT: https://muffledbirdmarket.netlify.app/
 

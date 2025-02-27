@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -6,9 +7,9 @@ import Modal from "./Modal";
 import contractABI from "./abi/predicts.json";
 import { useNotification } from "./context/NotificationContext";
 import { cryptoPredictions } from "./predicts/crypto";
-import { entertainmentPredictions } from "./predicts/entertainment";
+import { reposPrediction } from "./predicts/repos";
 import { newsPredictions } from "./predicts/news";
-import { politicsPredictions } from "./predicts/politics";
+
 import { sportsPredictions } from "./predicts/sports";
 import { usePrivy } from "@privy-io/react-auth";
 import { useWallets } from "@privy-io/react-auth";
@@ -16,11 +17,12 @@ import { ethers } from "ethers";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import CountdownTimer from "~~/components/CountdownTimer";
 import { chartPrediction } from "./predicts/tcharts";
-import { tickerPrediction } from "./predicts/tickers";
-import { nartPrediction } from "./predicts/narts";
-import TradingViewChart from "./TradingViewChart";
 
-const categories = ["Sports", "Crypto", "TradingCharts", "DEFI", "Entertainment", "News", "Politics"];
+import TradingViewChart from "./TradingViewChart";
+import Github from "./Github";
+
+
+const categories = ["Sports", "Crypto", "TradingCharts", "Repositories",  "News",];
 // Replace with the actual path to your contract ABI
 
 const contractAddress = "0x930Bc20640818022387FE882423566623787480C"; // Replace with your deployed contract address
@@ -43,19 +45,20 @@ type Prediction = {
   yesVotes: number;
   noVotes: number;
   status: string;
-  tradingPair?: string | null; 
-  resolved: boolean; // or resolved: boolean if you prefer boolean logic
+  tradingPair?: string | null; // Optional field for trading pairs
+  githubrepo?: string | null; // Optional field for GitHub repository (format: "owner/repo")
+  resolved: boolean;
+  targetStars?: number | null; // Add targetStars field
+
+  
 };
 
 const predictions = [
   ...sportsPredictions,
   ...newsPredictions,
-  ...entertainmentPredictions,
-  ...politicsPredictions,
   ...cryptoPredictions,
   ...chartPrediction,
-  ...tickerPrediction,
-  ...nartPrediction,
+  ...reposPrediction,
 ];
 
 const filters = ["Recent", "Trending", "2025"];
@@ -80,6 +83,7 @@ const PredictionSite = () => {
   const [modalMessage, setModalMessage] = useState("");
   const { user } = usePrivy() as { user: { wallet?: { address: string } } | null };
   const { wallets } = useWallets();
+  const [targetReachedPredictions, setTargetReachedPredictions] = useState<Set<number>>(new Set());
 
   useEffect(() => {
     const fetchContract = async () => {
@@ -105,6 +109,10 @@ const PredictionSite = () => {
     prediction =>
       prediction.category === activeCategory && prediction.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
+
+  const handleTargetReached = (predictionId: number) => {
+    setTargetReachedPredictions(prev => new Set(prev).add(predictionId)); // Add prediction ID to the set
+  };
 
   // Function to get the user's wallet address
   async function getWalletAddress(): Promise<string | null> {
@@ -258,10 +266,10 @@ const PredictionSite = () => {
       {/* Header */}
       <div className="text-center py-8 bg-gradient-to-red from-yellow-600 to-pink-500">
         <h1 className="text-4xl font-bold" style={{ fontFamily: "'Nosifer', sans-serif" }}>
-          monad muffled birdy market
+          FORMA muffled mamo market
         </h1>
         <p className="text-3xl mt-2" style={{ fontFamily: "'Rubik Scribble', sans-serif" }}>
-          be a muffled bird on the FORMA market!
+          be a muffled mamo on the FORMA market!
         </p>
       </div>
 
@@ -377,7 +385,16 @@ const PredictionSite = () => {
                 </div>
               )}
 
-
+ {/* Display Github component if githubrepo exists */}
+ {prediction.githubrepo && (
+  <div>
+    <Github
+      githubrepo={prediction.githubrepo}
+      targetStars={prediction.targetStars}
+      onTargetReached={() => handleTargetReached(prediction.id)}
+    />
+  </div>
+)}
         {prediction.status === "in_motion" ? (
           <>
             <p className="mt-4 text-red-500 font-semibold">Prediction in Motion</p>
@@ -395,33 +412,33 @@ const PredictionSite = () => {
         ) : (
           <>
             <div className="flex justify-between items-center mt-4">
-              <button
-                disabled={isVotingClosed} // Disable the Yes button if voting is closed
-                className={`${
-                  isVotingClosed
-                    ? "bg-gray-500 cursor-not-allowed" // Make the button gray when voting is closed
-                    : isActive && selectedPrediction?.voteType === "yes"
-                    ? "bg-green-700"
-                    : "bg-green-500 hover:bg-green-600"
-                } text-white font-bold py-2 px-4 rounded-lg`}
-                onClick={() => handleVoteClick(prediction, "yes")}
-              >
-                Yes
-              </button>
-              <button
-                disabled={isVotingClosed} // Disable the No button if voting is closed
-                className={`${
-                  isVotingClosed
-                    ? "bg-gray-500 cursor-not-allowed" // Make the button gray when voting is closed
-                    : isActive && selectedPrediction?.voteType === "no"
-                    ? "bg-red-700"
-                    : "bg-red-500 hover:bg-red-600"
-                } text-white font-bold py-2 px-4 rounded-lg`}
-                onClick={() => handleVoteClick(prediction, "no")}
-              >
-                No
-              </button>
-            </div>
+  <button
+    disabled={isVotingClosed || targetReachedPredictions.has(prediction.id)} // Disable if deadline passed or target reached
+    className={`${
+      isVotingClosed || targetReachedPredictions.has(prediction.id)
+        ? "bg-gray-500 cursor-not-allowed" // Gray out if disabled
+        : isActive && selectedPrediction?.voteType === "yes"
+        ? "bg-green-700"
+        : "bg-green-500 hover:bg-green-600"
+    } text-white font-bold py-2 px-4 rounded-lg`}
+    onClick={() => handleVoteClick(prediction, "yes")}
+  >
+    Yes
+  </button>
+  <button
+    disabled={isVotingClosed || targetReachedPredictions.has(prediction.id)} // Disable if deadline passed or target reached
+    className={`${
+      isVotingClosed || targetReachedPredictions.has(prediction.id)
+        ? "bg-gray-500 cursor-not-allowed" // Gray out if disabled
+        : isActive && selectedPrediction?.voteType === "no"
+        ? "bg-red-700"
+        : "bg-red-500 hover:bg-red-600"
+    } text-white font-bold py-2 px-4 rounded-lg`}
+    onClick={() => handleVoteClick(prediction, "no")}
+  >
+    No
+  </button>
+</div>
 
             <p className="mt-4 text-sm">
               Yes: {yesPercentage}% | No: {noPercentage}%

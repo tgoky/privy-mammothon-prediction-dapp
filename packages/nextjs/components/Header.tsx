@@ -40,13 +40,9 @@ export const Header = () => {
   };
 
   const menuLinks: HeaderMenuLink[] = [
+   
     {
-      label: "Birdy Task: be a muffled bird",
-      onClick: handleModalToggle, // Open the modal on click
-      icon: <Bars3Icon className="w-4 h-4" />,
-    },
-    {
-      label: "Visit the Birds", // Label for the new menu item
+      label: "MuffledBird Documentation", // Label for the new menu item
       onClick: () => {}, // No click behavior needed, since it's an anchor link
       icon: <Bars3Icon className="w-4 h-4" />, // You can customize the icon if desired
       href: "https://muffledbirds.netlify.app/", // External website link
@@ -113,11 +109,11 @@ export const Header = () => {
         </div>
         <Link href="/" passHref className="hidden lg:flex items-center gap-2 ml-4 mr-6 shrink-0">
           <div className="flex relative w-6 h-6">
-            <Image alt="SE2 logo" className="cursor-pointer" fill src="./logo.svg" />
+       
           </div>
           <div className="flex flex-col">
-            <span className="font-bold leading-tight">muffled bird</span>
-            <span className="text-xs">be a muffled bird</span>
+            <span className="font-bold leading-tight">muffled mamo</span>
+            <span className="text-xs">be a muffled mamo</span>
           </div>
         </Link>
         <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">

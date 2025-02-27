@@ -45,8 +45,8 @@ export const Footer = () => {
           <div className="flex justify-center items-center gap-2 text-sm w-full">
             <div className="text-center">
               {/* TODO: add the scaffold-eth-monad repo link */}
-              <a href="https://x.com/muffledbird" target="_blank" rel="noreferrer" className="link">
-                @muffledbird
+              <a href="https://x.com/blockhashlabs" target="_blank" rel="noreferrer" className="link">
+                @blockhashlabs
               </a>
             </div>
             <span>·</span>
@@ -59,7 +59,7 @@ export const Footer = () => {
                 rel="noreferrer"
               >
                 <MonadLogo className="w-3 h-5 pb-1" />
-                <span className="link">Monad</span>
+                <span className="link">Forma</span>
               </a>
             </div>
             <span>·</span>

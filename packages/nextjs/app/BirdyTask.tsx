@@ -46,9 +46,9 @@ const BirdyTask = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col items-center p-6">
-      <h1 className="text-4xl font-bold text-white mb-8">Be a Muffled Bird!</h1>
+      <h1 className="text-4xl font-bold text-white mb-8">Be a Muffled Mamo!</h1>
       <p className="text-2xl font-bold text-white mb-8">
-        This is mandatory to verify your social eligiblity as a muffled bird{" "}
+        This is mandatory to verify your social eligiblity as a muffled mamo{" "}
       </p>
 
       {/* Single Rectangle Card */}
