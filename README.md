@@ -2,7 +2,7 @@ The First Prediction Market on the Monad Ecosystem
 
 Be a muffled mamo on the forma market !
 
-VISIT: https://muffledbirdmarket.netlify.app/
+WEB URL : https://muffledmamomarket.netlify.app/
 
 
 Step-by-Step Guide to Setup Project 
@@ -332,3 +332,14 @@ TradingView: For displaying trading charts.
 Tailwind CSS: For styling the UI.
 
 Smart contract (Solidity): the contract provides a transparent and decentralized way to create, bet on, and resolve predictions while ensuring fair payouts and fee collection.
+
+
+         ______  
+       /  (   'o\  
+     _|__|__|____|  
+    /            \  
+   (              )  
+   ^^            ^^  
+  gmamo
+
+  telegram contact : @alwayschatting 

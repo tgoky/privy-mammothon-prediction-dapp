@@ -266,10 +266,10 @@ const PredictionSite = () => {
       {/* Header */}
       <div className="text-center py-8 bg-gradient-to-red from-yellow-600 to-pink-500">
         <h1 className="text-4xl font-bold" style={{ fontFamily: "'Nosifer', sans-serif" }}>
-          FORMA muffled mamo market
+          FORMA muffled mamo 🦣 market
         </h1>
         <p className="text-3xl mt-2" style={{ fontFamily: "'Rubik Scribble', sans-serif" }}>
-          be a muffled mamo on the FORMA market!
+          be a muffled mamo 🦣 on the FORMA market!
         </p>
       </div>
 

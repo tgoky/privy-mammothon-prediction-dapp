@@ -42,7 +42,7 @@ export const Header = () => {
   const menuLinks: HeaderMenuLink[] = [
    
     {
-      label: "MuffledBird Documentation", // Label for the new menu item
+      label: "MuffledMamo Documentation", // Label for the new menu item
       onClick: () => {}, // No click behavior needed, since it's an anchor link
       icon: <Bars3Icon className="w-4 h-4" />, // You can customize the icon if desired
       href: "https://muffledbirds.netlify.app/", // External website link
