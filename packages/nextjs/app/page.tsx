@@ -495,7 +495,7 @@ const PredictionSite = () => {
                   : "bg-red-500 hover:bg-red-600"
               }`}
             >
-              Say {selectedPrediction.voteType.toUpperCase()} to win {(voteAmount * 2).toFixed(2)} TIA
+              Say {selectedPrediction.voteType.toUpperCase()} to win TIA Pool Payout!
             </button>
           </div>
         )}
