@@ -1,19 +1,18 @@
-The First Prediction Market on the Monad Ecosystem
+## A Prediction Market on the Forma Network using Social Data Powered by Privy
 
-Be a muffled mamo on the forma market !
+Be a muffled mamo 🦣 on the forma market !
 
-WEB URL : https://muffledmamomarket.netlify.app/
+## WEB URL : https://muffledmamomarket.netlify.app/
 
 
-Step-by-Step Guide to Setup Project 
-Step 1: Set Up Your Wallet
+## Step-by-Step Guide to Setup Project 
+## Step 1: Set Up Your Wallet
 Before you can start participating in predictions, make sure you have an Ethereum wallet like MetaMask or any other wallet that supports Web3. This wallet will allow you to interact with the contract and place bets.
-
 
 
 Connect your wallet to the site by clicking the "Connect Wallet" button on the site..
 
-Switch to Forma Network: (the Network Configuration below)
+## Switch to Forma Network: (the Network Configuration below)
 
 Network Name : Forma
 
@@ -26,8 +25,10 @@ CURRENCY: TIA
 EXPLORER: https://explorer.forma.art
 
 
-PROJECT STRUCTURE:
+## PROJECT STRUCTURE:
 
+
+```
 privy-mammothon-prediction-dapp/
 ├── packages/                      # Source code files
 │   ├── hardhat/                   # Backend (Smart Contracts)
@@ -74,7 +75,6 @@ privy-mammothon-prediction-dapp/
 │       ├── tailwind.config.js     # Tailwind CSS configuration
 │       └── tsconfig.json          # TypeScript configuration
 │
-├                   
 ├── public/                        # Static files served directly (e.g., index.html, favicon)
 ├── scripts/                       # Build or deployment scripts
 ├── .env                           # Environment variables
@@ -83,6 +83,8 @@ privy-mammothon-prediction-dapp/
 ├── README.md                      # Project overview and instructions
 ├── LICENSE                        # License file (if open-source)
 └── requirements.txt               # Python dependencies (if applicable)
+```
+
 
 # Project Documentation: privy-mammothon-prediction-dapp
 
@@ -100,13 +102,6 @@ This documentation provides a detailed explanation of the `privy-mammothon-predi
 ### Modularity
 - Reusable components are placed in `components/`.
 - Custom hooks are placed in `hooks/`.
-- Utility functions are placed in `utils/`.
-
-### Scalability
-- The structure allows for easy addition of new features (e.g., new prediction types, components).
-
-### TypeScript Support
-- TypeScript is used throughout the project, with type definitions in `types/`.
 
 ### Configuration Management
 - Network configurations are centralized in `formaNetwork.js`.
@@ -166,7 +161,7 @@ The login/logout button allows users to authenticate or disconnect from the dApp
 Simplified Onboarding
 Privy allows users to log in using their email or wallet, making the dApp accessible to both crypto-native and non-crypto users. This reduces friction and increases user adoption.
 
-Key Features
+## Key Features
 Prediction Categories: Sports, Crypto, Trading Charts, Repositories, and News.
 
 GitHub Integration: Fetch and display GitHub repository data (e.g., stars, forks) for predictions.
@@ -213,7 +208,7 @@ type Prediction = {
   targetStars?: number | null; // Target stars for GitHub repository predictions
 };
 
-### GitHub Integration
+### GitHub Social Data Integration
 The app integrates with GitHub to fetch repository data for predictions. This is handled by the Github.tsx component.
 
 ### How It Works
@@ -275,7 +270,7 @@ When rendering the prediction cards, the app checks if the prediction ID is in t
 </button>
 
 ### 2. Example Workflow
-User Places a Prediction: A user places a prediction on whether a GitHub repository will reach a certain number of stars (e.g., 1000 stars).
+User Places a Prediction: Will Initia-labs/initia-registry hit 400 stars by late March 2025
 
 Real-Time Monitoring: The Github component fetches the current star count from the GitHub API and compares it to the target.
 
@@ -292,15 +287,8 @@ Setting Vote Amount: Users can adjust the amount of TIA they want to vote using 
 
 Submitting the Vote: The vote is submitted to the smart contract via the placeBet function.
 
-### Voting Flow
-handleVoteClick: Sets the selected prediction and vote type.
-
-handleVoteSubmit: Submits the vote to the smart contract.
-
-Smart Contract Interaction: The getContract function initializes the contract instance using the user's wallet.
-
-### Claiming Rewards
-Users can claim rewards if their predictions match the resolved outcome. This is handled by the handleClaimClick function.
+### Claiming Payouts
+Users can claim payouts if their predictions match the resolved outcome. This is handled by the handleClaimClick function.
 
 ### Claim Flow
 Check User Eligibility: Verify that the user has voted on the prediction.
@@ -315,8 +303,19 @@ After the prediction deadline, a 12-24 hour window allows the admin and multi-si
 
 Smart Contract Update: Once verified, the admin updates the prediction status in the smart contract, marking it as resolved and setting the correct outcome (e.g., "Yes" or "No").
 
-### 3.5 Notifications
+###  Notifications
 The app uses a notification system to inform users of successful votes, claims, and errors. This is managed by the NotificationContext
+
+## ENV setup
+
+DEPLOYER_PRIVATE_KEY=
+FORMA_RPC_URL=
+FORMA_CHAIN_ID=
+FORMA_EXPLORER_URL=
+NEXT_PUBLIC_PRIVY_APP_ID=
+REACT_APP_GITHUB_TOKEN=
+
+
 
 ### Technologies Used
 Privy: For wallet authentication and user management.
