@@ -160,7 +160,7 @@ export const Header = () => {
           onClick={authenticated ? logout : login}
           className="text-white bg-blue-500 px-4 py-2 rounded-full hover:bg-blue-600"
         >
-          {authenticated ? "Disconnect" : "Login with Email"}
+          {authenticated ? "Disconnect" : "Login"}
         </button>
       </div>
 
