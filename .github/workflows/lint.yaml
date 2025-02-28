@@ -33,10 +33,10 @@ jobs:
       - name: Run deploy contracts on Monad (& generate contracts typescript output)
         env:
           DEPLOYER_PRIVATE_KEY: ${{ secrets.KEY }}
-          MONAD_RPC_URL: ${{ secrets.URL }}
-          MONAD_CHAIN_ID: ${{ secrets.CHAIN_ID }}
-          MONAD_EXPLORER_URL: ${{ secrets.EXPLORER }}
-        run: yarn deploy --network monadDevnet
+          FORMA_RPC_URL: ${{ secrets.URL }}
+          FORMA_CHAIN_ID: ${{ secrets.CHAIN_ID }}
+          FORMA_EXPLORER_URL: ${{ secrets.EXPLORER }}
+        run: yarn deploy --network formaMainnet
 
       - name: Run nextjs lint
         run: yarn next:lint --max-warnings=0

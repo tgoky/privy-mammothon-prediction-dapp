@@ -1,4 +1,4 @@
-import { monadDevnet } from "../customChains";
+import { formaMainnet } from "../customChains";
 import * as chains from "viem/chains";
 import scaffoldConfig from "~~/scaffold.config";
 
@@ -14,7 +14,7 @@ export type ChainWithAttributes = chains.Chain & Partial<ChainAttributes>;
 
 // Mapping of chainId to RPC chain name an format followed by alchemy and infura
 export const RPC_CHAIN_NAMES: Record<number, string> = {
-  [monadDevnet.id]: "monad-devnet",
+  [formaMainnet.id]: "forma-devnet",
 };
 
 export const getAlchemyHttpUrl = (chainId: number) => {
@@ -24,7 +24,7 @@ export const getAlchemyHttpUrl = (chainId: number) => {
 };
 
 export const NETWORKS_EXTRA_DATA: Record<string, ChainAttributes> = {
-  [monadDevnet.id]: {
+  [formaMainnet.id]: {
     color: "#200052",
   },
 };

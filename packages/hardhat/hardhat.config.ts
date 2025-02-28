@@ -35,7 +35,7 @@ const config: HardhatUserConfig = {
       },
     ],
   },
-  defaultNetwork: "monadDevnet",
+  defaultNetwork: "formaMainnet",
   namedAccounts: {
     deployer: {
       // By default, it will take the first Hardhat account as the deployer
@@ -51,10 +51,10 @@ const config: HardhatUserConfig = {
         enabled: process.env.MAINNET_FORKING_ENABLED === "true",
       },
     },
-    monadDevnet: {
-      url: process.env.MONAD_RPC_URL,
+    formaMainnet: {
+      url: process.env.FORMA_RPC_URL,
       accounts: [deployerPrivateKey],
-      chainId: Number(process.env.MONAD_CHAIN_ID),
+      chainId: Number(process.env.FORMA_CHAIN_ID),
     },
   },
   // configuration for harhdat-verify plugin
@@ -62,11 +62,11 @@ const config: HardhatUserConfig = {
     apiKey: "DUMMY_VALUE_FOR_BLOCKSCOUT", // Or use your actual BlockScout API key if available
     customChains: [
       {
-        network: "monadDevnet",
+        network: "formaMainnet",
         chainId: 984122,
         urls: {
-          browserURL: process.env.MONAD_EXPLORER_URL ?? "https://explorer.forma.art", // Correct explorer URL
-          apiURL: process.env.MONAD_EXPLORER_URL ? `${process.env.MONAD_EXPLORER_URL}/api` : "", // Ensure a valid API URL is available, or leave empty
+          browserURL: process.env.FORMA_EXPLORER_URL ?? "https://explorer.forma.art", // Correct explorer URL
+          apiURL: process.env.FORMA_EXPLORER_URL ? `${process.env.FORMA_EXPLORER_URL}/api` : "", // Ensure a valid API URL is available, or leave empty
         },
       },
     ],

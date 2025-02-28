@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { MonadLogo } from "./assets/MonadLogo";
 import { hardhat } from "viem/chains";
 import { CurrencyDollarIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { Faucet } from "~~/components/scaffold-eth";
@@ -54,11 +53,11 @@ export const Footer = () => {
               <p>and</p>
               <a
                 className="flex justify-center items-center gap-1"
-                href="https://monad.xyz/"
+                href="https://forma.art/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <MonadLogo className="w-3 h-5 pb-1" />
+               
                 <span className="link">Forma</span>
               </a>
             </div>
