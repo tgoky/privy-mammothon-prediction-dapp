@@ -12,7 +12,7 @@ async function main() {
   const predictionMarket = await ethers.getContractAt("PredictionMarket2", contractAddress);
 
   // Define the prediction ID and result
-  const predictionId = 36; // ID of the prediction to resolve
+  const predictionId = 44; // ID of the prediction to resolve
   const result = "no"; // Result to set for the prediction (either "yes" or "no")
 
   // Resolve the prediction

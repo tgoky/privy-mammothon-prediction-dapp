@@ -1,14 +1,14 @@
 export const reposPrediction = [
     {
       id: 29,
-      title: "Will Succinct Labs/op-succinct hit 145 stars by mid-March 2025?",
+      title: "Will Succinct Labs/op-succinct hit 200 stars by late Feb 2025?",
       category: "Repositories",
-      status: "open",
-      resolved: false,
+      status: "in_motion",
+      resolved: true,
       tradingPair: null,
-      targetStars:  145, // Add targetStars
+      targetStars:  200, // Add targetStars
       githubrepo: 'succinctlabs/op-succinct',
-      deadline: new Date("2025-03-13T18:00:00Z"),
+      deadline: new Date("2025-04-01T18:00:00Z"),
     },
     {
       id: 30,
@@ -22,11 +22,11 @@ export const reposPrediction = [
       deadline: new Date("2025-03-28T18:00:00Z"),
     },
     {
-      id: 31,
+      id: 44,
       title: "Will Initia-labs/initia-registry hit 400 stars by late March 2025",
       category: "Repositories",
-      status: "open",
-      resolved: false,
+      status: "in_motion",
+      resolved: true,
       tradingPair: null,
       targetStars: 300, // Add targetStars
       githubrepo: 'initia-labs/initia-registry',
@@ -90,12 +90,12 @@ export const reposPrediction = [
       },
       {
         id: 37,
-        title: "Will Vbuterin/blog hit 199 by mid-March 2025",
+        title: "Will Vbuterin/blog hit 209 by mid-March 2025",
         category: "Repositories",
         status: "open",
         resolved: false,
         tradingPair: null,
-        targetStars: 199, // Add targetStars
+        targetStars: 209, // Add targetStars
         githubrepo: 'vbuterin/blog',
         deadline: new Date("2025-03-08T18:00:00Z"),
       },

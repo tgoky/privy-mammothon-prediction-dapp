@@ -6,6 +6,8 @@ Be a muffled mamo 🦣 on the forma market !
 
 DOCS LINK: https://tgoky.gitbook.io/muffled-mamo-market
 
+Prediction Contract: 0x799d74B91589422E2b479F19c90ba8Ee48C1C678
+
 
 
 ## Step-by-Step Guide to Setup Project 
@@ -305,9 +307,6 @@ The claimPayout function ensures that users who have placed correct bets receive
 After the prediction deadline, a 12-24 hour window allows the admin and multi-signature (multi-sig) wallets to verify the outcome using trusted data sources (e.g., GitHub API, crypto price feeds, sports results).
 
 Smart Contract Update: Once verified, the admin updates the prediction status in the smart contract, marking it as resolved and setting the correct outcome (e.g., "Yes" or "No").
-
-###  Notifications
-The app uses a notification system to inform users of successful votes, claims, and errors. This is managed by the NotificationContext
 
 ## ENV setup
 
