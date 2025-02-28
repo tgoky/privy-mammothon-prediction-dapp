@@ -106,14 +106,14 @@ export const reposPrediction = [
       },
       {
         id: 37,
-        title: "Will Vbuterin/blog hit 200 by mid-March 2025",
+        title: "Will Vbuterin/blog hit 199 by mid-March 2025",
         category: "Repositories",
         yesVotes: 900,
         noVotes: 400,
-        status: "open",
-        resolved: false,
+        status: "in_motion",
+        resolved: true,
         tradingPair: null,
-        targetStars: 200, // Add targetStars
+        targetStars: 199, // Add targetStars
         githubrepo: 'vbuterin/blog',
         deadline: new Date("2025-03-08T18:00:00Z"),
       },

@@ -12,7 +12,7 @@ import "hardhat-deploy-ethers";
 
 // If not set, it uses the hardhat account 0 private key.
 const deployerPrivateKey =
-  process.env.DEPLOYER_PRIVATE_KEY ?? "b49a6be9115d615b51d33b9ac9f475c508b2e2947acf48f2228a43402458d1fc";
+  process.env.DEPLOYER_PRIVATE_KEY ?? "";
 
 // If not set, it uses ours Etherscan default API key.
 // const etherscanApiKey = process.env.ETHERSCAN_API_KEY || "DNXJA8RX2Q3VZ4URQIWP7Z68CJXQZSC6AW";
