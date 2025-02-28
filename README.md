@@ -2,7 +2,10 @@
 
 Be a muffled mamo 🦣 on the forma market !
 
-## WEB URL : https://muffledmamomarket.netlify.app/
+## WEBSITE URL : https://muffledmamomarket.netlify.app/
+
+DOCS LINK: https://tgoky.gitbook.io/muffled-mamo-market
+
 
 
 ## Step-by-Step Guide to Setup Project 

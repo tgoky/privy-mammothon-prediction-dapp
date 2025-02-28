@@ -45,7 +45,7 @@ export const Header = () => {
       label: "MuffledMamo Documentation", // Label for the new menu item
       onClick: () => {}, // No click behavior needed, since it's an anchor link
       icon: <Bars3Icon className="w-4 h-4" />, // You can customize the icon if desired
-      href: "https://muffledbirds.netlify.app/", // External website link
+      href: "https://tgoky.gitbook.io/muffled-mamo-market", // External website link
       external: true, // Add a flag to indicate it's an external link
     },
   ];
