@@ -1,5 +1,7 @@
 ## A Prediction Market on the Forma Network using Social Data Powered by Privy
 
+MUFFLED MAMO PREDICTION MARKET
+
 Be a muffled mamo 🦣 on the forma market !
 
 ## WEBSITE URL : https://muffledmamomarket.netlify.app/
