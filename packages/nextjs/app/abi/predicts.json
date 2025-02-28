@@ -46,25 +46,6 @@
     "inputs": [
       {
         "indexed": false,
-        "internalType": "string",
-        "name": "action",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "ExcessFundsHandled",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
         "internalType": "uint256",
         "name": "id",
         "type": "uint256"
@@ -175,7 +156,7 @@
   },
   {
     "inputs": [],
-    "name": "excessFunds",
+    "name": "getBalance",
     "outputs": [
       {
         "internalType": "uint256",
@@ -197,19 +178,6 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "action",
-        "type": "string"
-      }
-    ],
-    "name": "handleExcessFunds",
-    "outputs": [],
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {

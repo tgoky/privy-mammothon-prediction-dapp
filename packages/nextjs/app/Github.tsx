@@ -66,7 +66,12 @@ const Github = ({ githubrepo, targetStars, onTargetReached }: GithubProps) => {
     return <span className="text-red-500">Error: {error}</span>;
   }
 
-  return <span className="text-yellow-400">⭐ {stars} stars</span>;
+  return (
+    <span className="text-yellow-400 drop-shadow-lg animate-pulse transform hover:scale-105 transition duration-300">
+      current repo : ⭐ {stars} stars
+    </span>
+  );
+  
 };
 
 export default Github; 

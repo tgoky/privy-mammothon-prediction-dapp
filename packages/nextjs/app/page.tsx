@@ -25,7 +25,7 @@ import Github from "./Github";
 const categories = ["Sports", "Crypto", "TradingCharts", "Repositories",  "News",];
 // Replace with the actual path to your contract ABI
 
-const contractAddress = "0x930Bc20640818022387FE882423566623787480C"; // Replace with your deployed contract address
+const contractAddress = "0x799d74B91589422E2b479F19c90ba8Ee48C1C678"; // Replace with your deployed contract address
 
 const getContract = async (wallet: any) => {
   if (!wallet) throw new Error("No connected wallet found.");
@@ -42,8 +42,6 @@ type Prediction = {
   id: number;
   title: string;
   category: string;
-  yesVotes: number;
-  noVotes: number;
   status: string;
   tradingPair?: string | null; // Optional field for trading pairs
   githubrepo?: string | null; // Optional field for GitHub repository (format: "owner/repo")
@@ -73,7 +71,7 @@ const PredictionSite = () => {
   `}
   </style>;
 
-  const [activeCategory, setActiveCategory] = useState("TradingCharts");
+  const [activeCategory, setActiveCategory] = useState("Repositories");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedFilter, setSelectedFilter] = useState(filters[0]);
   const [selectedPrediction, setSelectedPrediction] = useState<(Prediction & { voteType: string }) | null>(null);
@@ -348,9 +346,8 @@ const PredictionSite = () => {
      {/* Predictions Grid */}
 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-8">
   {filteredPredictions.map(prediction => {
-    const totalVotes = prediction.yesVotes + prediction.noVotes || 1; // Avoid division by zero
-    const yesPercentage = ((prediction.yesVotes / totalVotes) * 100).toFixed(1);
-    const noPercentage = (100 - parseFloat(yesPercentage)).toFixed(1);
+// Avoid division by zero
+  
 
     const isActive = selectedPrediction?.id === prediction.id;
 
@@ -440,9 +437,7 @@ const PredictionSite = () => {
   </button>
 </div>
 
-            <p className="mt-4 text-sm">
-              Yes: {yesPercentage}% | No: {noPercentage}%
-            </p>
+      
           </>
         )}
         <CountdownTimer 

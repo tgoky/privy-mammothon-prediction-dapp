@@ -1,17 +1,19 @@
-import { ethers, deployments, getNamedAccounts } from "hardhat";
+import { ethers, getNamedAccounts } from "hardhat";
 
 async function main() {
   const { deployer } = await getNamedAccounts();
 
   console.log("Running script with the account:", deployer);
 
-  // Get the deployed contract instance
-  const predictionMarketDeployment = await deployments.get("PredictionMarket3");
-  const predictionMarket = await ethers.getContractAt("PredictionMarket3", predictionMarketDeployment.address);
+  // Specify the deployed contract address directly
+  const contractAddress = "0x799d74B91589422E2b479F19c90ba8Ee48C1C678"; // Replace with the actual address
+
+  // Get the contract instance using the address
+  const predictionMarket = await ethers.getContractAt("PredictionMarket2", contractAddress);
 
   // Define the prediction ID and result
-  const predictionId = 34; // ID of the prediction to resolve
-  const result = "yes"; // Result to set for the prediction (either "yes" or "no")
+  const predictionId = 36; // ID of the prediction to resolve
+  const result = "no"; // Result to set for the prediction (either "yes" or "no")
 
   // Resolve the prediction
   const tx = await predictionMarket.resolvePrediction(predictionId, result);
@@ -20,8 +22,6 @@ async function main() {
   await tx.wait();
 
   console.log(`Prediction with ID ${predictionId} has been resolved with result "${result}".`);
-
-  // Optionally, add further actions or notifications if necessary
 }
 
 main()
