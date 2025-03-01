@@ -13,7 +13,30 @@ Prediction Contract: 0x799d74B91589422E2b479F19c90ba8Ee48C1C678
 
 
 ## Step-by-Step Guide to Setup Project 
-## Step 1: Set Up Your Wallet
+
+git clone the repository link
+
+cd into the project folder
+
+run yarn install
+
+and then yarn start to run  on localhost
+
+for smart contract deployment, further navigate using
+
+cd packages
+cd hardhat
+
+then set up hardhat config and .env
+
+use the scripts folder to deploy contracts and run scripts like predictmarket.ts & resolvemarket.ts
+
+deploy prediction contracr using yarn hardhat run scripts/predictmarket.ts --network formaMainnet
+
+resolve scripts using yarn hardhat run scripts/resolvemarket.ts --network formaMainnet
+
+
+## How to use the Dapp
 Before you can start participating in predictions, make sure you have an Ethereum wallet like MetaMask or any other wallet that supports Web3. This wallet will allow you to interact with the contract and place bets.
 
 
@@ -30,6 +53,9 @@ CHAIN ID: 984122
 CURRENCY: TIA
 
 EXPLORER: https://explorer.forma.art
+
+
+
 
 
 ## PROJECT STRUCTURE:
@@ -324,13 +350,9 @@ REACT_APP_GITHUB_TOKEN=
 ### Technologies Used
 Privy: For wallet authentication and user management.
 
-Forma: As the blockchain network for smart contract interactions.
+Typescript
 
 Ethers.js: For interacting with the Ethereum blockchain.
-
-GitHub API: For fetching repository data.
-
-TradingView: For displaying trading charts.
 
 Tailwind CSS: For styling the UI.
 
