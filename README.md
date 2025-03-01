@@ -10,7 +10,11 @@ DOCS LINK: https://tgoky.gitbook.io/muffled-mamo-market
 
 Prediction Contract: 0x799d74B91589422E2b479F19c90ba8Ee48C1C678
 
+placeBet Tx Hash : https://explorer.forma.art/tx/0x891dc591105683276395cdbb9eb93f931cd73d4f9eae3cfb212777d908d34578
 
+claimPayout Tx Hash: https://explorer.forma.art/tx/0x00a2eb02bd2cbcc1d78394c6abeca3a0ee62e78de4fe8e86ba2fe786b66bdc82?tab=internal
+
+resolvePrediction Tx Hash: https://explorer.forma.art/tx/0x616a44f4f7f6255df7eceb719f20cf8030f024a416d1c973f6fdd2c681acd86d
 
 ## Step-by-Step Guide to Setup Project 
 
